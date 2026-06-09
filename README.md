@@ -13,7 +13,7 @@
 ## 📌 Contact & Info
 * 📧 **Email:** lictacco915@naver.com
 * 📱 **Mobile:** 010.4870.6310
-* 🌐 **Live Demo:** [GitHub Pages로 슬라이드 보기](https://hsj48706310-arch.github.io/my-portfolio/) *(GitHub 주소에 맞게 변경하여 사용하세요)*
+* 🌐 **Live Demo:** [GitHub Pages로 슬라이드 보기](https://hsj48706310-arch.github.io/my-portfolio/)
 
 ---
 
