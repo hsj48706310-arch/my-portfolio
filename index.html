@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홍서지 포트폴리오 - AI 개발자</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* 1. 디자인 시스템: 그린 격자 테마 */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            background-color: #f0f3f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            padding: 50px 0;
+        }
+
+        /* 슬라이드 컨테이너: 가로 1280px, 세로 720px 고정 */
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            background-color: #ffffff;
+            /* 깔끔한 모눈종이 격자무늬 배경 */
+            background-image: 
+                linear-gradient(to right, #dbe4dc 1.5px, transparent 1.5px),
+                linear-gradient(to bottom, #dbe4dc 1.5px, transparent 1.5px);
+            background-size: 35px 35px;
+            border: 1px solid #2e7d32;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 60px 80px;
+            font-family: 'Noto Sans KR', sans-serif;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+
+        /* 타이틀 디자인 */
+        .slide-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #2e7d32;
+            border-left: 12px solid #2e7d32;
+            padding-left: 20px;
+            margin-bottom: 40px;
+            text-align: left;
+            z-index: 2;
+        }
+
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; color: #1b5e20; }
+        p, li { color: #37474f; font-size: 20px; line-height: 1.6; }
+
+        .content-area {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        /* 프로필용 둥근 테두리 및 기술박스 통합 스타일 */
+        .profile-img-box {
+            border-radius: 50%;
+            width: 260px;
+            height: 260px;
+            overflow: hidden;
+            border: 5px solid #2e7d32;
+            margin: 0 auto 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .profile-img-box img { width: 100%; height: 100%; object-fit: cover; }
+
+        .tech-inline-box {
+            background-color: #8bc34a;
+            border-radius: 20px;
+            padding: 25px 35px;
+            color: white;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+        }
+        .tech-inline-box h4 { color: white; margin-bottom: 15px; font-size: 22px; border-bottom: 1px solid rgba(255,255,255,0.4); padding-bottom: 5px;}
+        .tech-inline-box ul { columns: 2; list-style: none; }
+        .tech-inline-box li { color: white; font-size: 18px; margin-bottom: 8px; font-weight: 500; }
+
+        /* 업무 흐름/태그 디자인 */
+        .flow-card {
+            background: #f9fbf9;
+            border: 1px solid #c8e6c9;
+            padding: 30px;
+            border-radius: 15px;
+            height: 100%;
+        }
+        .flow-tag {
+            background: #2e7d32;
+            color: white;
+            padding: 6px 16px;
+            display: inline-block;
+            font-weight: 700;
+            font-size: 16px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        /* 결과 페이지 (8페이지 스타일 복구) */
+        .result-layout {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .result-badge {
+            background: #2e7d32;
+            color: white;
+            padding: 10px 25px;
+            display: inline-block;
+            font-weight: 700;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+        .image-container {
+            border-radius: 15px;
+            overflow: hidden;
+            border: 3px solid #2e7d32;
+            height: 380px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .image-container img { width: 100%; height: 100%; object-fit: cover; }
+    </style>
+</head>
+<body>
+
+<div class="slide-container">
+    <div class="content-area" style="text-align: center;">
+        <p style="font-weight: 700; letter-spacing: 4px; color: #2e7d32; margin-bottom: 10px;">2026 차세대 생성형 AI 엔지니어</p>
+        <h1 style="font-size: 80px; line-height: 1.1;">HONG, SEOJI<br>PORTFOLIO</h1>
+        <p style="font-size: 30px; color: #43a047; margin-top: 20px;">국내 여행 추천 LLM 에이전트 개발 프로젝트</p>
+        <div style="background: #2e7d32; color: white; padding: 18px 45px; margin-top: 50px; display: inline-flex; gap: 40px; border-radius: 50px; font-size: 18px;">
+            <span><i class="fa-solid fa-envelope"></i> lictacco915@naver.com</span>
+            <span><i class="fa-solid fa-phone"></i> 010.4870.6310</span>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container">
+    <h2 class="slide-title">Introduce & Tech Stack</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div style="text-align: center;">
+                <div class="profile-img-box">
+                    <img src="햄찌모자이크.jpg" alt="홍서지 프로필">
+                </div>
+                <h3 style="font-size: 36px; color: #2e7d32;">홍서지 <span style="font-size: 22px; color: #43a047; font-weight: 400;">Hong Seoji</span></h3>
+                <p style="font-size: 20px; color: #555; margin-top: 5px;">AI Develop Engineer</p>
+            </div>
+            <div>
+                <div class="tech-inline-box" style="margin-bottom: 20px;">
+                    <h4>Core Tech Stack</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-code" style="font-size:14px; margin-right:6px;"></i> Python 3.12+</li>
+                        <li><i class="fa-solid fa-brain" style="font-size:14px; margin-right:6px;"></i> GPT-4o-mini</li>
+                        <li><i class="fa-solid fa-diagram-project" style="font-size:14px; margin-right:6px;"></i> LangGraph</li>
+                        <li><i class="fa-solid fa-link" style="font-size:14px; margin-right:6px;"></i> LangChain</li>
+                        <li><i class="fa-solid fa-gears" style="font-size:14px; margin-right:6px;"></i> streamlit</li>
+                        <li><i class="fa-solid fa-key" style="font-size:14px; margin-right:6px;"></i> dotenv</li>
+                    </ul>
+                </div>
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 10px;"><i class="fa-solid fa-circle-check" style="color: #2e7d32; margin-right: 10px;"></i> <strong>핵심 역량:</strong> 상태 중심(Stateful) 에이전트 워크플로우 설계</li>
+                    <li><i class="fa-solid fa-circle-check" style="color: #2e7d32; margin-right: 10px;"></i> <strong>기여도:</strong> 2인 프로젝트 내 코어 추천 로직의 90% 이상 전담 개발</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container">
+    <h2 class="slide-title">Project Context & Execution</h2>
+    <div class="content-area">
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px;">
+            <div class="flow-card">
+                <div class="flow-tag" style="background-color: #d32f2f;">기존 문제 (Problem)</div>
+                <h3 style="font-size: 22px; margin-bottom: 15px;">유연성 부족 및 비용 불명확</h3>
+                <p style="font-size: 18px;">7개 지역과 10개 테마 조건의 실시간 결합 요구가 증가했으나, 복잡한 입력을 반영한 코스 추천과 정밀한 비용 계산 수식을 처리할 지능형 아키텍처 부재.</p>
+            </div>
+            <div class="flow-card">
+                <div class="flow-tag" style="background-color: #f57c00;">맡은 업무 (Role)</div>
+                <h3 style="font-size: 22px; margin-bottom: 15px;">아키텍처 설계 & 엔진 개발</h3>
+                <p style="font-size: 18px;">LangGraph 프레임워크를 도입하여 복잡한 요구사항을 상태 단위로 나누고, 프론트엔드 팀원과 연동할 데이터 규격(Spec) 선제적 정의 및 코어 엔진 개발 총괄.</p>
+            </div>
+            <div class="flow-card">
+                <div class="flow-tag" style="background-color: #1976d2;">진행 사항 (Action)</div>
+                <h3 style="font-size: 22px; margin-bottom: 15px;">워크플로우 최적화 및 파이프라인</h3>
+                <p style="font-size: 18px;">'입력 수집 → 추천 → 비용 계산 → 요약'의 유연한 순환 파이프라인 설계. <code>travel_data.py</code> 상에 정밀 수식 구현 및 JSON 파싱 에러 방지용 Fallback 메커니즘 연동.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container">
+    <h2 class="slide-title">Project Outcome</h2>
+    <div class="content-area">
+        <div class="result-layout">
+            <div class="text-side">
+                <div class="flow-tag" style="background-color: #2e7d32; margin-bottom: 15px;">결과 (Result)</div>
+                <br>
+                <div class="result-badge">수동 계획 대비 50% 이상의 효율 개선</div>
+                <p style="font-weight: 500; font-size: 22px; margin-bottom: 15px; color: #1b5e20;">
+                    복잡했던 여행 계획 수립 과정을 단 7단계의 자동화 입력 인터페이스로 단축 완료.
+                </p>
+                <p style="font-size: 19px;">
+                    네트워크 및 LLM API 순간 오류 발생 환경 속에서도 다운타임 없이 가동되는 강력한 시스템 가용성(Crash-free)을 실현하며 프로젝트 완성도를 입증했습니다.
+                </p>
+            </div>
+            <div class="image-side">
+                <div class="image-container">
+                    <img src="국내여행 코스추천 에이전트1.jpg" alt="최종 결과 대시보드 시각화">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
